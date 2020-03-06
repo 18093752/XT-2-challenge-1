@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Dragon V2</title>
+	<link rel="stylesheet" type="text/css" href="layout.css"/>
+	<script src="Chart.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+	function showGraph(i){
+		switch(i){
+			case 1:
+				$("#graphContainerOne").show();
+				$("#graphContainerTwo").hide();
+				$("#graphContainerThree").hide();
+				break;
+			case 2:
+				$("#graphContainerOne").hide();
+				$("#graphContainerTwo").show();
+				$("#graphContainerThree").hide();
+				break;
+			case 3:
+				$("#graphContainerOne").hide();
+				$("#graphContainerTwo").hide();
+				$("#graphContainerThree").show();
+				break;
+		}
+	}
+	</script>
+</head>
+<body>
+<img id="logo" src="logo.png"/>
+<div id="minorData">
+<div><h4>Temperatuur</h4><span>21&degC</span><img src="./003-thermometer.svg"/></div>
+<div><h4>Energie</h4><span>30%</span><img src="./005-battery.svg"/></div>
+<div><h4>Wifi</h4><span></span><img src="./002-wifi.svg"/></div>
+<div><h4>Nachtmodus</h4><span></span><img src="./001-moon.svg"/></div>
+<div class="empty"><h4>voeg toe</h4><span></span><img src="./006-add.svg"/></div>
+</div>
+<div id="header"><h1>Dashboard</h1><h3>20 Aug 2030</h3></div>
+<div id="graphArea">
+<div id="graphContainerOne" class="graphArea">
+<canvas id="graphOne" ></canvas>
+</div>
+<script>
+var ctx = document.getElementById('graphOne').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'line',
+	responsive: true,
+	maintainAspectRatio: false,
+    data: {
+        labels: ['0','10','20','30','40','50','60','70','80','90','100','110','120','130'],
+        datasets: [{
+            label: 'Afstand tot Mars [in miloenen km]',
+            data: [225,215,204,193,184,175,166,154,145,135,125,114,106,95],
+            backgroundColor: [
+                'rgba(54, 162, 235, 0.2)',
+            ],
+            borderColor: [
+                'rgba(54, 162, 235, 1)',
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    suggestedMin: 0,
+                    suggestedMax: 10
+                }
+            }],
+			xAxes: [{
+                ticks: {
+                    suggestedMin: 0,
+                    suggestedMax: 10
+                }
+            }]
+        },
+		
+    }
+		
+    }
+});
+</script>
+<div id="graphContainerTwo" class="graphArea">
+<canvas id="graphTwo" ></canvas>
+</div>
+<script>
+var ctx = document.getElementById('graphTwo').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'radar',
+	responsive: true,
+	maintainAspectRatio: false,
+    data: {
+        labels: ['Voeding', 'Drinken', 'Entertainment', 'Sociaal', 'Ruimte'],
+        datasets: [{
+            data: [4, 4, 3, 5, 2],
+            backgroundColor: [
+                'rgba(254, 67, 66,0.2)',
+            ],
+            borderColor: [
+                'rgb(254, 67, 66)',
+            ],
+            borderWidth: 1
+        }]
+    },
+	options:{
+		legend: {
+			display: false,
+			},
+scale: {
+	ticks: {
+	       	min: 0,
+            	max: 5
+        	}
+	}
+}
+
+});
+</script>
+<div  id="graphContainerThree" class="graphArea">
+<canvas id="graphThree" ></canvas>
+</div>
+<script>
+var ctx = document.getElementById('graphThree').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'doughnut',
+	responsive: true,
+	maintainAspectRatio: true,
+    data: {
+        labels: ['S', 'O2', 'Ar', 'CO2'],
+        datasets: [{
+            data: [78.09, 20.94, 0.93, 0.03],
+            backgroundColor: [
+                'rgb(134, 65, 255)',
+                'rgb(54, 27, 106)',
+		'rgb(170, 124, 255)',
+		'rgb(234, 223, 255)',
+            ],
+        }]
+    },
+options: {
+        legend: {
+            display: true,
+            labels: {
+                boxWidth: 10,
+            }
+        }
+    }
+
+});
+</script>
+
+
+</div>
+<div id="navBar">
+<div id="iconTwo"><a href="#graphOne">Positionering</a></div>
+<div id="iconThree"><a href="#graphTwo">Happyness</a></div>
+<div id="iconFour"><a href="#graphThree">Luchtkwaliteit</a></div>
+</div>
+</body>
+</html>

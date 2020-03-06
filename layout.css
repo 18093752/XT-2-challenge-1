@@ -1,0 +1,300 @@
+html{
+	margin: 0px;
+	padding: 0px;
+	font-family: Arial;
+}
+
+body{
+	margin: 0px;
+	padding: 0px;
+	height: 100vh;
+	width:100vw;
+	display: grid;
+	background-color: #f1f2f6;
+	grid-template-rows: 120px 70px auto 50px;
+	grid-template-areas: 
+	"minor"
+	"header"
+	"graph"
+	"nav"
+}
+
+#logo{
+	width: 150px;
+	position: absolute;
+	top: 5px;
+	left: 5px;
+}
+
+#header{
+	grid-area: header;
+	display: flex;
+	justify-content: space-between;
+	padding: 20px 20px 0px 20px;
+}
+
+h1{
+	font-size: 25px;
+	margin: 3px;
+	color: grey;
+}
+
+h3{
+	margin: 9px;
+	vertical-align: bottom;
+	font-size: 17px;
+	color: #eb4a51;
+}
+
+a{
+	text-decoration: none;
+	color: black;
+}
+
+#minorData{
+	grid-area: minor;
+	width: 100%;
+	margin: 0px;
+	margin-top: -50px;
+	padding-top: 100px;
+	display: flex;
+	justify-content: space-evenly;
+	background-color: white;
+	border-radius: 20px;
+	-webkit-box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.1);
+	-moz-box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.1);
+	box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.1);
+}
+
+#minorData>div{
+	position:relative;
+	font-size: 15px;
+	padding: 6px;
+	margin: 2px;
+	background-color: #f2f2f2;
+	border-radius: 10px;
+	height: 40px;
+	text-align: right;
+	min-width: 40px;
+}
+
+#minorData h4{
+	margin:0px;
+	font-size: 8px;
+	text-align: left;
+
+}
+
+#minorData img{
+	width: 20px;
+	position: absolute;
+	bottom: 2px;
+	left: 2px;
+}
+
+#minorData span{
+	position: absolute;
+	bottom: 2px;
+	right: 2px;
+}
+
+
+
+#minorData>div.empty{
+	background-color: white;
+	border-style: dashed;
+	border-width: 3px;
+	border-color: #f2f2f2
+}
+
+#graphArea{
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	margin: 0px 20px auto 20px;
+	padding: 8% 1% 8% 1%;
+	grid-area: graph;
+	overflow-y: scroll;
+	height: 90%;
+}
+
+.graphArea{
+	padding: 8% 1% 8% 1%;
+	margin: 0px 0px 40px 0px;
+	background-color: white;
+	border-radius: 20px;
+	-webkit-box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.1);
+	-moz-box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.1);
+	box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.1);
+	width: 90%;
+}
+
+#graphContainerOne{
+	display: block;	
+}
+
+#graphOne, #graphTwo, #graphThree, #graphFour{
+	position:relative;
+	display: block;
+	width: 100% !important;
+}
+
+#navBar{
+	z-index: 10;
+	display: flex;
+	justify-content: space-evenly;
+	grid-area: nav;
+	width:100%;
+	margin: 0px;
+	align-items: flex-end;
+	background-color: white;
+	-webkit-box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.2);
+	box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.2);
+}
+
+#navBar>div{
+	display: inline;	
+	background-color: #f4f5f9;
+	padding:5px;
+	border-radius: 15px;
+	width: auto;
+	margin:15px 5px 15px 5px;
+	text-align: center;
+	font-size: 11px;
+}
+
+#navBar>div:hover {
+	background-color: darkgrey;
+}
+
+#navBar>div:hover a{
+	color: white;
+}
+
+
+@media all and (min-device-width: 1000px) and (orientation:landscape){
+  
+  body{
+  	grid-template-rows: auto auto 10vh;
+	grid-template-columns: auto 20vw;
+	grid-template-areas:
+	"header minor" 
+	"graph minor"
+	"nav minor"
+  }
+
+#header{
+	margin-top: 40px;
+}
+
+#logo{
+	width: 250px;
+}
+
+#minorData{
+	flex-direction: column;
+	align-items: center;
+	z-index: 11;
+	border-radius: 0px;
+}
+  
+  #minorData>div{
+	font-size: 5vh;
+	padding: 40px 5px 40px 5px;
+	margin: 2px;
+	text-align: center;
+	width: 70%;
+	position: relative;
+
+	
+}
+
+#minorData span{
+	color: #8e8e8e;
+}
+
+#minorData h4{
+	font-size: 20px;
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	color: #8e8e8e;
+}
+
+#minorData img{
+	width: 30px;
+}
+  
+  #navBar>div{	
+	font-size: 20px;
+	padding: 15px;
+	border-radius: 30px;
+}
+}
+
+@media all and (min-device-width: 1400px){
+
+body{
+	grid-template-columns: 80vw 20vw;
+	grid-template-rows: auto auto;
+	grid-template-areas: 
+	"header minor"
+	"graph minor"
+  }
+
+#header{
+	margin-top: 50px;
+}
+
+#logo{
+	width: 250px;
+}
+
+#graphArea{
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-around;
+	width: 100%;
+	overflow: hidden;
+	padding-bottom: 0px;
+	height:85vh;
+	padding: 0px;
+	margin: 0px;
+	font-size: 20px;
+}
+
+.graphArea{
+	display: block;
+	width: 30%;
+	padding: 4% 1% 4% 1%;
+	margin: 2% 4% 2% 4%;
+	text-align: center;
+}
+
+
+
+#navBar{
+	display: none;
+}
+
+#minorData{
+	margin: 0px;
+	padding: 0px;
+}
+
+  #minorData>div{
+	font-size: 15px;
+	padding: 20px;
+	margin: 20px;
+	text-align: center;
+	width: 40%;
+}
+
+#minorData span{
+	font-size: 24px;
+}
+
+
+
+}
