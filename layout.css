@@ -245,6 +245,7 @@ body{
 
 #header{
 	margin-top: 50px;
+	padding: 20px 3% 0px 3%;
 }
 
 #logo{
@@ -294,13 +295,14 @@ body{
 #minorData span{
 	font-size: 24px;
 }
+	
+
 
 
 
 }
 
 @media all and (min-device-width: 1800px){
-
 	
 	body{
 	grid-template-columns: auto;
@@ -317,6 +319,15 @@ body{
 	z-index: 11;
 	border-radius: 0px;
 }
+	
+	#minorData>div{
+		padding: 30px;
+	}
+	
+	#minorData img{
+	bottom: 7px;
+	left: 7px;
+	}
 	
 	.graphArea{
 	display: block;
