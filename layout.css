@@ -301,13 +301,7 @@ body{
 
 @media all and (min-device-width: 1800px){
 
-	.graphArea{
-	display: block;
-	width: 25%;
-	padding: 4% 1% 4% 1%;
-	margin: 2% 2% 2% 2%;
-	text-align: center;
-}
+	
 	body{
 	grid-template-columns: auto;
 	grid-template-rows: auto auto auto;
@@ -316,4 +310,31 @@ body{
 	"graph"
 	"minor"
   }
+	
+	#minorData{
+	flex-direction: row;
+	align-items: center;
+	z-index: 11;
+	border-radius: 0px;
+}
+	
+	.graphArea{
+	display: block;
+	width: 25%;
+	padding: 4% 1% 4% 1%;
+	margin: 2% 2% 2% 2%;
+	text-align: center;
+}
+	
+	#minorData>div{
+	font-size: 15px;
+	padding: 20px;
+	margin: 20px;
+	text-align: center;
+	width: 10%;
+}
+	
+	#graphArea{
+	height:60vh;
+}
 }
